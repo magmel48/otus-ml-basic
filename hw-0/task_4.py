@@ -31,6 +31,7 @@ def interactive_test():
 
     print('Encryption result: {r}'.format(r=encrypt(text, key)))
 
+
 # tests
 assert encrypt('dog', 3) == 'grj'
 assert encrypt('python', 5) == 'udymts'

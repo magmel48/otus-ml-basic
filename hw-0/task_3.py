@@ -71,6 +71,7 @@ def to_human_repr(arr):
 
     return 'no solutions'
 
+
 # tests
 assert parse('x**2 - 11*x + 28 = 0') == [1, -11, 28]
 assert parse('3*x**2 - 11*x + 28 = 0') == [3, -11, 28]

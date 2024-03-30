@@ -18,9 +18,10 @@ def split(n_str):
 
     # start at the end and get by 3 letters
     for i in range(len(n_str) - 1, -1, -3):
-        result = ' ' + n_str[max(0, i-2):i+1] + result
+        result = ' ' + n_str[max(0, i - 2):i + 1] + result
 
     return result[1:]
+
 
 # tests
 assert split('1') == '1'
