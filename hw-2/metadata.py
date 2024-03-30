@@ -4,7 +4,10 @@ from typing import Optional
 
 
 class Metadata(BaseModel):
-    path: str  # full path including protocol (file://, https://, ftp://, etc.)
+    path: str
+    """
+    full path including protocol (file://, https://, ftp://, etc.)
+    """
     size: int = Field(default=0)  # in bytes
     created_at: date = Field(default_factory=lambda: date.today())
     updated_at: date = Field(default_factory=lambda: date.today())
@@ -42,3 +45,6 @@ class VideoMetadata(SoundMetadata):
 class ImageMetadata(Metadata):
     width: int = Field(default=0)
     height: int = Field(default=0)
+
+# in case of adding new file formats
+# we will need to add more metadata classes here

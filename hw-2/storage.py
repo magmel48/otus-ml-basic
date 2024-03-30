@@ -30,10 +30,12 @@ class Storage:
         Converts the file into the new format.
 
         :param file: Old file.
-        :param content: When the file converted into the new format - content can be untouched.
+        :param content: When the file converted into
+        the new format - content can be untouched.
         :param metadata: New metadata.
         :return: None
-        :raises UnsupportedConversion: if new format is not supported by the system.
+        :raises UnsupportedConversion: if new format
+        is not supported by the system.
         """
         pass
 
@@ -52,8 +54,10 @@ class LocalStorage(Storage):
             file.metadata = VideoMetadata(path=path, bitrate=32000)
         elif file.metadata.extension in IMAGE_EXTENSIONS:
             file.metadata = ImageMetadata(path=path, width=500, height=500)
+        # in case of adding new file formats we need to add more branches here
         else:
-            raise UnsupportedFileExtension(f'{file.metadata.extension} is not supported')
+            raise UnsupportedFileExtension(
+                f'{file.metadata.extension} is not supported')
 
         return file
 
